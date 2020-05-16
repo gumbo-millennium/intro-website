@@ -1,0 +1,36 @@
+name: Build and deploy Jekyll site
+
+on:
+  push:
+    branches:
+        - master
+
+jobs:
+  jekyll:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        ruby: ['2.5.5']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build the site in the jekyll/builder container
+        run: |
+            docker run \
+                -v ${{ github.workspace }}:/srv/jekyll \
+                -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+                jekyll/builder:latest \
+                /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+
+      - name: Deploy to GituHub Pages
+        if: |
+          github.event_name == 'push' &&
+          matrix.os == 'ubuntu-latest'
+        uses: crazy-max/ghaction-github-pages@v1.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          target_branch: gh-pages
+          build_dir: ./_site
