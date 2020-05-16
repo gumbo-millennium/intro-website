@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test desktop</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        .font-title {
+            font-family: 'Poppins', sans-serif;
+        }
+        .header {
+            height: 100vh;
+            margin-bottom: 8rem;
+        }
+
+        .header__bg {
+            position: relative;
+            margin-bottom: -100vh;
+            height: 100vh;
+        }
+
+        .header__bg-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 89vw;
+            object-fit: cover;
+        }
+
+        .header__bg-overlay {
+            box-sizing: content-box;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: calc(100vh - 20px);
+            width: 89vw;
+            background: rgba(0, 107, 0, 0.3);
+            border-bottom: 20px solid #EEEEEE;
+        }
+
+        .header__bg-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 60vw;
+            background: center right / cover url('assets/header-cover.svg') no-repeat;
+        }
+
+        .header__content {
+            max-width: 33%;
+        }
+
+        .header__button+.header__button {
+            margin-top: 1.25rem;
+        }
+
+        .card {
+            background-color: #eee;
+            border-radius: 1rem;
+        }
+
+        .reasons {
+            margin-top: -15rem;
+            margin-bottom: -9rem;
+            background: top center / cover no-repeat url('assets/beer.jpg') #f3d466;
+        }
+
+        .reasons__slide {
+            clip-path: polygon(0 200px, 100% 0, 100% 100%, 0 100%);
+            background-color: rgba(243, 212, 102, 0.8);
+            height: 15rem;
+        }
+        .reasons__main {
+            padding: 7rem 0 14rem 0;
+            background-color: rgba(243, 212, 102, 0.8);
+        }
+        .reasons__card {
+            background-color: #f3d466;
+        }
+        .order-now {
+            position: relative;
+        }
+        .order-now::before {
+            position: absolute;
+            content: '';
+            display: block;
+            top: 9rem;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #006b00;
+        }
+        .order-now__container {
+            position: relative;
+            background-color: #fff;
+            border-radius: 1rem;
+            min-height: 18rem;
+        }
+
+        .footer {
+            background-color: #006b00;
+        }
+
+        .footer__container {
+            padding: 2rem 0;
+        }
+        .footer__text {
+            color: #268922;
+            text-align: center;
+        }
+
+        .text-brand-800 {
+            color: #005200;
+        }
+
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button {
+            border-radius: 1rem;
+            background: #f5f5f5;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .button--primary {
+            background-color: #f3d466;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__bg relative">
+            <img src="assets/header.jpg" class="header__bg-image" />
+            <div class="header__bg-overlay"></div>
+            <div class="header__bg-slide"></div>
+        </div>
+        <div class="container mx-auto relative">
+            <div class="py-16 header__content">
+                <img src="./assets/logo.svg" alt="Logo" class="h-24 mb-32">
+                <h1 class="header__title text-gray-800 font-bold text-4xl mb-24 font-title ">
+                    De gezelligste
+                    studentenvereniging
+                    van Zwolle
+                </h1>
+                <div class="header__buttons">
+                    <a href="#" class="header__button button button--primary p-8 block w-full">
+                        Ik meld mij aan
+                    </a>
+                    <a href="#" class="header__button button p-8 block w-full">
+                        Waarom gumbo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto relative z-10">
+        <h2 class="text-gray-800 font-bold font-title text-4xl mb-16">
+            Waarom Gumbo Millennium
+        </h2>
+
+        <div class="grid grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="card overflow-hidden flex flex-col items-start">
+                <img src="assets/tile-1.jpg" alt="Title" class="h-64 w-full object-cover" />
+                <div class="p-8">
+                    <h3 class="font-title text-2xl font-bold mb-8 leading-none">Activiteiten</h3>
+                    <p class="leading-loose">
+                        Wij houden van een leuk uitje, van een workshop smeden tot het befaamde landhuisweekend, bij ons
+                        ben je aan het goede adres.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card overflow-hidden flex flex-col items-start">
+                <img src="assets/tile-2.jpg" alt="Title" class="h-64 w-full object-cover" />
+                <div class="p-8">
+                    <h3 class="font-title text-2xl font-bold mb-8 leading-none">Je eigen woonkamer</h3>
+                    <p class="leading-loose">
+                        Wij houden van een leuk uitje, van een workshop smeden tot het befaamde landhuisweekend, bij ons
+                        ben je aan
+                        het goede adres.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card overflow-hidden flex flex-col items-start">
+                <img src="assets/tile-3.jpg" alt="Title" class="h-64 w-full object-cover" />
+                <div class="p-8">
+                    <h3 class="font-title text-2xl font-bold mb-8 leading-none">Groot netwerk</h3>
+                    <p class="leading-loose">
+                        Wij houden van een leuk uitje, van een workshop smeden tot het befaamde landhuisweekend, bij ons
+                        ben je aan
+                        het goede adres.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 1 -->
+            <div class="card overflow-hidden flex flex-col items-start">
+                <img src="assets/tile-1.jpg" alt="Title" class="h-64 w-full object-cover" />
+                <div class="p-8">
+                    <h3 class="font-title text-2xl font-bold mb-8 leading-none">Activiteiten</h3>
+                    <p class="leading-loose">
+                        Wij houden van een leuk uitje, van een workshop smeden tot het befaamde landhuisweekend, bij ons
+                        ben je aan het goede adres.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card overflow-hidden flex flex-col items-start">
+                <img src="assets/tile-2.jpg" alt="Title" class="h-64 w-full object-cover" />
+                <div class="p-8">
+                    <h3 class="font-title text-2xl font-bold mb-8 leading-none">Je eigen woonkamer</h3>
+                    <p class="leading-loose">
+                        Wij houden van een leuk uitje, van een workshop smeden tot het befaamde landhuisweekend, bij ons
+                        ben je aan
+                        het goede adres.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card overflow-hidden flex flex-col items-start">
+                <img src="assets/tile-3.jpg" alt="Title" class="h-64 w-full object-cover" />
+                <div class="p-8">
+                    <h3 class="font-title text-2xl font-bold mb-8 leading-none">Groot netwerk</h3>
+                    <p class="leading-loose">
+                        Wij houden van een leuk uitje, van een workshop smeden tot het befaamde landhuisweekend, bij ons
+                        ben je aan
+                        het goede adres.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="reasons">
+        <div class="reasons__slide  relative z-0"></div>
+        <div class="reasons__main">
+            <div class="container mx-auto grid grid-cols-2 gap-8">
+                <div class="shadow reasons__card h-64"></div>
+                <div class="shadow reasons__card h-64"></div>
+                <div class="shadow reasons__card h-64"></div>
+                <div class="shadow reasons__card h-64"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-now">
+        <div class="order-now__container container mx-auto p-12">
+            <h3 class="font-title text-5xl font-bold text-center mb-6 text-brand-800">
+                Inschrijven introweek € 35,-
+            </h3>
+            <h4 class="font-title text-3xl text-center text-gray-700">5 dagen & 4 nachten</h4>
+            <div class="h-64 my-6"></div>
+            <div class="text-center">
+                <a href="#" class="header__button button button--primary py-8 px-16 inline-block">
+                    Ik meld mij aan
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p class="footer__text">© Gumbo Millennium 2020. Alle rechten voorbehouden</p>
+        </div>
+    </footer>
+</body>
+
+</html>
