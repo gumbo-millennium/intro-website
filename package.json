@@ -1,0 +1,17 @@
+{
+    "name": "@gumbo-millennium/intro",
+    "version": "beta",
+    "description": "Gumbo intro theme",
+    "main": "index.html",
+    "repository": "https://github.com/gumbo-millennium/intro-website.git",
+    "author": "Roelof Roos <github@roelof.io>",
+    "license": "UNLICENSED",
+    "private": true,
+    "devDependencies": {
+        "autoprefixer": "^9.3.1",
+        "postcss-cli": "^7.1.0",
+        "postcss-import": "^12.0.1",
+        "purgecss": "^2.1.0",
+        "tailwindcss": "^1.0.0"
+    }
+}
